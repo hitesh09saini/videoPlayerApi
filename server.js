@@ -24,11 +24,15 @@ app.get('/', (req, res) => {
 });
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGO_URI).then(() => {
+mongoose.connect(process.env.MONGO_URI, {
+  useNewUrlParser: true,
+  useCreateIndex: true
+}).then(() => {
   console.log('MongoDB is connected');
-}).catch((err) => {
-  console.log('Monngo Error: ' + err);
+}).catch(err => {
+  console.log('Mongo Error: ' + err);
 })
+
 
 app.use('/videos', videoRoutes);
 app.use('/subtitles', subtitleRoutes);
