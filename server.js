@@ -22,6 +22,9 @@ app.use('/subtitles', subtitleRoutes);
 
 app.use(cors({
   origin: clientURL,
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept'],
 }));
 
 app.get('/', (req, res) => {
