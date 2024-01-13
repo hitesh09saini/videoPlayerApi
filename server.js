@@ -16,7 +16,7 @@ console.log(clientURL);
 
 // CORS middleware setup
 const corsOptions = {
-  origin: 'http://localhost:5173',
+  origin: clientURL,
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept'],
